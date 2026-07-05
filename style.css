@@ -1,0 +1,580 @@
+/* =====================================
+   RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+
+    background:linear-gradient(
+        180deg,
+        #071329 0%,
+        #0d1b3d 40%,
+        #18284f 70%,
+        #22305f 100%
+    );
+
+    min-height:100vh;
+    position:relative;
+    color:white;
+}
+
+
+/* =====================================
+   ESTRELLAS
+===================================== */
+
+.stars{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#ffdfff 1px, transparent 1px);
+
+    background-size:
+    140px 140px,
+    200px 200px,
+    280px 280px;
+
+    animation:parpadeo 5s infinite alternate;
+
+    opacity:.7;
+
+    z-index:-3;
+
+}
+
+.stars2{
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(#fff 2px, transparent 2px);
+
+    background-size:250px 250px;
+
+    opacity:.25;
+
+    animation:mover 60s linear infinite;
+
+    z-index:-2;
+
+}
+
+@keyframes mover{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(-300px);
+}
+
+}
+
+@keyframes parpadeo{
+
+0%{
+opacity:.3;
+}
+
+100%{
+opacity:.9;
+}
+
+}
+
+
+/* =====================================
+   LUNA
+===================================== */
+
+.moon{
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:60px;
+    right:90px;
+
+    background:
+    radial-gradient(circle at 35% 35%,
+    #fff,
+    #f8f0d5 60%,
+    #d9d1b0 100%);
+
+    box-shadow:
+    0 0 30px #fff,
+    0 0 80px rgba(255,255,255,.5),
+    0 0 150px rgba(255,255,255,.3);
+
+    animation:flotar 5s ease-in-out infinite;
+
+}
+
+@keyframes flotar{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+
+/* =====================================
+   CONTENEDOR
+===================================== */
+
+.container{
+
+width:min(1100px,90%);
+margin:auto;
+
+padding-top:90px;
+padding-bottom:80px;
+
+text-align:center;
+
+}
+
+
+/* =====================================
+   TITULO
+===================================== */
+
+.titulo{
+
+font-family:'Great Vibes',cursive;
+
+font-size:90px;
+
+font-weight:normal;
+
+color:white;
+
+text-shadow:
+
+0 0 10px white,
+0 0 30px #ff7dd1,
+0 0 50px #ff3fa5;
+
+margin-bottom:5px;
+
+animation:brillo 2s infinite alternate;
+
+}
+
+.heartTitle{
+
+font-size:40px;
+
+margin-bottom:30px;
+
+animation:latido 1.2s infinite;
+
+}
+
+@keyframes latido{
+
+50%{
+transform:scale(1.25);
+}
+
+}
+
+@keyframes brillo{
+
+from{
+
+text-shadow:
+0 0 10px white,
+0 0 30px #ff84d4;
+
+}
+
+to{
+
+text-shadow:
+0 0 20px white,
+0 0 60px hotpink;
+
+}
+
+}
+
+
+/* =====================================
+   BOTON
+===================================== */
+
+#abrirCarta{
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:20px;
+
+cursor:pointer;
+
+background:linear-gradient(
+45deg,
+#ff6fc7,
+#ff9ddb
+);
+
+color:white;
+
+font-weight:bold;
+
+box-shadow:
+0 0 20px hotpink;
+
+transition:.35s;
+
+margin-bottom:45px;
+
+}
+
+#abrirCarta:hover{
+
+transform:translateY(-5px) scale(1.05);
+
+box-shadow:
+0 0 40px hotpink;
+
+}
+
+
+/* =====================================
+   CARTA
+===================================== */
+
+#carta{
+
+max-width:820px;
+
+margin:auto;
+
+transition:.8s;
+
+opacity:0;
+
+transform:translateY(60px);
+
+height:0;
+
+overflow:hidden;
+
+}
+
+#carta.abierta{
+
+opacity:1;
+
+transform:translateY(0);
+
+height:auto;
+
+margin-bottom:60px;
+
+}
+
+.pergamino{
+
+background:#f6ecd4;
+
+color:#4b392f;
+
+padding:50px;
+
+border-radius:15px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.45);
+
+border:8px solid #d4b483;
+
+position:relative;
+
+}
+
+.pergamino h2{
+
+font-family:'Dancing Script',cursive;
+
+font-size:48px;
+
+margin-bottom:25px;
+
+color:#9b4c56;
+
+}
+
+.texto{
+
+text-align:left;
+
+font-size:18px;
+
+line-height:1.9;
+
+}
+
+.texto p{
+
+margin-bottom:18px;
+
+}
+
+.firma{
+
+text-align:right;
+
+font-size:22px;
+
+font-family:'Dancing Script',cursive;
+
+margin-top:40px;
+
+}
+/* =====================================
+   FLORES DECORATIVAS
+===================================== */
+
+.flor{
+    position:fixed;
+    width:220px;
+    pointer-events:none;
+    z-index:-1;
+    opacity:.95;
+    animation:balanceo 6s ease-in-out infinite;
+}
+
+.izquierda{
+    left:0;
+    bottom:0;
+}
+
+.derecha{
+    right:0;
+    bottom:0;
+    transform:scaleX(-1);
+}
+
+@keyframes balanceo{
+    0%,100%{
+        transform:rotate(-2deg);
+    }
+
+    50%{
+        transform:rotate(2deg);
+    }
+}
+
+.derecha{
+    animation:balanceoDerecha 6s ease-in-out infinite;
+}
+
+@keyframes balanceoDerecha{
+    0%,100%{
+        transform:scaleX(-1) rotate(-2deg);
+    }
+
+    50%{
+        transform:scaleX(-1) rotate(2deg);
+    }
+}
+
+/* =====================================
+   GALERÍA
+===================================== */
+
+.galeria{
+    width:100%;
+    margin:40px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+.slider{
+    width:700px;
+    max-width:90vw;
+    height:420px;
+    overflow:hidden;
+    border-radius:20px;
+    border:4px solid rgba(255,255,255,.25);
+    box-shadow:0 15px 45px rgba(0,0,0,.45);
+    position:relative;
+    background:#111;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:opacity .6s ease;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.prev,
+.next{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:28px;
+    color:white;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+.prev:hover,
+.next:hover{
+    background:#ff69b4;
+    transform:scale(1.1);
+}
+
+/* =====================================
+   INDICADORES
+===================================== */
+
+.dots{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#ffffff66;
+    transition:.3s;
+}
+
+.dot.active{
+    background:#ff7bc9;
+    transform:scale(1.3);
+}
+
+/* =====================================
+   CORAZONES
+===================================== */
+
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    color:#ff6fae;
+    font-size:24px;
+    animation:subir 4s linear forwards;
+}
+
+@keyframes subir{
+
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(.7);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-250px) scale(1.6) rotate(25deg);
+    }
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:768px){
+
+.titulo{
+    font-size:58px;
+}
+
+.moon{
+    width:110px;
+    height:110px;
+    right:20px;
+    top:20px;
+}
+
+.pergamino{
+    padding:30px;
+}
+
+.pergamino h2{
+    font-size:38px;
+}
+
+.texto{
+    font-size:16px;
+}
+
+.galeria{
+    gap:8px;
+}
+
+.prev,
+.next{
+    width:45px;
+    height:45px;
+    font-size:22px;
+}
+
+.slider{
+    height:260px;
+}
+
+.flor{
+    width:130px;
+}
+
+}
